@@ -13,8 +13,7 @@
 #    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 #    See the License for the specific language governing permissions and
 #    limitations under the License.
-import os
-os.environ["HF_ENDPOINT"] = "https://hf-mirror.com"
+
 
 import os
 import copy
@@ -829,6 +828,7 @@ def train(attn_implementation=None):
             )
         else:
             # Loading the pretrained
+            os.environ["HF_ENDPOINT"] = "https://hf-mirror.com"
             model = LlavaLlamaForCausalLM.from_pretrained(
                 model_args.model_name_or_path,
                 cache_dir=training_args.cache_dir,
