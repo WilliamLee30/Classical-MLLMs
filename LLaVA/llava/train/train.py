@@ -828,7 +828,6 @@ def train(attn_implementation=None):
             )
         else:
             # Loading the pretrained
-            os.environ["HF_ENDPOINT"] = "https://hf-mirror.com"
             model = LlavaLlamaForCausalLM.from_pretrained(
                 model_args.model_name_or_path,
                 cache_dir=training_args.cache_dir,
