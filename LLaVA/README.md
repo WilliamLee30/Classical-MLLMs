@@ -92,7 +92,9 @@ pip install -e .
 ```
 pip install -e ".[train]"
 pip install flash-attn --no-build-isolation 
-#pip install flash-attn==2.6.3 --no-build-isolation --no-cache-dir -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
+#Library version change by lyw:
+pip install flash-attn==2.6.3 --no-build-isolation --no-cache-dir -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
+pip install peft==0.10.0
 ```
 
 ### Upgrade to latest code base
