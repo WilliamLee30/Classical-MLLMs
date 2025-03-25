@@ -1,6 +1,10 @@
 #!/bin/bash
 
-deepspeed ../../train/train_mem.py \
+#GPUs and port
+gpus=4,5,6,7
+port=29501
+
+deepspeed --include localhost:${gpus} --master_port ${port} ../../llava/train/train_mem.py \
     --deepspeed ../zero2.json \
     --model_name_or_path /lmsys/vicuna-13b-v1.5 \
     --version plain \
